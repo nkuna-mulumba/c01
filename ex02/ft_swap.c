@@ -6,7 +6,7 @@
 /*   By: jcongolo <jcongolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/12 21:14:21 by jcongolo          #+#    #+#             */
-/*   Updated: 2025/08/31 20:59:03 by jcongolo         ###   ########.fr       */
+/*   Updated: 2025/08/31 21:08:22 by jcongolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -313,25 +313,16 @@ void    ft_swap_array_elements(void *array, size_t elem_size, size_t index1, siz
     - Implemente uma função que só realiza a troca de valores se os dados forem diferentes, evitando operações desnecessárias.
         int ft_conditional_swap(void *a, void *b, size_t size);
 */
-
-void    *ft_memcpy1(void *dest, const void *src, size_t n)
-{
-    unsigned char   *d;
-    unsigned char   *s;
-    size_t          i;
-
-    d = (unsigned char *)dest;
-    s = (unsigned char *)src;
-    i = 0;
-
-    while (i < n)
-    {
-        d[i] = s[i];
-        i++;
-    }
-    return(dest);
-}
-
+/*
+    * ft_memcmp - Compara dois blocos de memória byte a byte.
+    * @s1: ponteiro para o primeiro bloco de memória.
+    * @s2: ponteiro para o segundo bloco de memória.
+    * @n: número de bytes a serem comparados.
+    
+    * Esta função verifica se os primeiros 'n' bytes dos blocos de memória apontados por
+    * 's1' e 's2' são iguais. A comparação é feita byte a byte.
+    * Retorna 0 se todos os bytes forem iguais, ou 1 se houver qualquer diferença.
+*/
 int ft_memcmp(const void *s1, const void *s2, size_t n)
 {
     unsigned char   *s_one;
@@ -352,6 +343,16 @@ int ft_memcmp(const void *s1, const void *s2, size_t n)
     return(0);
 }
 
+/*
+    * ft_conditional_swap - Troca dois blocos de memória se forem diferentes.
+    * @a: ponteiro para o primeiro bloco de memória.
+    * @b: ponteiro para o segundo bloco de memória.
+    * @size: tamanho dos blocos em bytes.
+    
+    * Esta função compara os blocos de memória 'a' e 'b'. Se forem diferentes,
+    * realiza a troca dos conteúdos usando uma área temporária.
+    * Retorna 1 se a troca foi realizada, ou 0 se os blocos eram iguais ou inválidos.
+*/
 int ft_conditional_swap(void *a, void *b, size_t size)
 {
     unsigned char   tmp[size];
@@ -360,9 +361,9 @@ int ft_conditional_swap(void *a, void *b, size_t size)
         return(0);
     }
     
-    ft_memcpy1(tmp, a, size);
-    ft_memcpy1(a, b, size);
-    ft_memcpy1(b, tmp, size);
+    ft_memcpy(tmp, a, size);
+    ft_memcpy(a, b, size);
+    ft_memcpy(b, tmp, size);
     return(1);
 }
 /*
