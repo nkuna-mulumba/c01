@@ -1,0 +1,44 @@
+🎯 Breve objetivo do enunciado
+    Criar uma função que troca o conteúdo de dois inteiros usando ponteiros. O foco é ensinar:
+    - Manipulação de ponteiros
+    - Passagem por referência
+    - Uso de variáveis temporárias
+    - Alteração direta de valores fora da função
+
+✅ Pontos positivos
+    - Didático: ensina conceitos fundamentais de C, como ponteiros e memória.
+    - Modular: encapsula a lógica de troca em uma função reutilizável.
+    - Seguro: evita perda de dados com uso de variável temporária.
+    - Clareza: fácil de entender e aplicar em diversos contextos.
+    - Reutilizável: pode ser usada em ordenações, algoritmos, manipulação de estruturas, etc.
+
+⚠️ Pontos negativos
+    - Limitado a int: não funciona com outros tipos sem duplicar código.
+    - Não verifica ponteiros nulos: pode causar erro se a ou b forem NULL.
+    - Não é genérica: não serve para tipos compostos ou genéricos sem adaptação.
+    - Pouco flexível: não retorna status ou erro, o que pode ser útil em projetos maiores.
+    - Não documenta comportamento esperado em casos extremos (ex: ponteiros iguais)
+
+🛠️ Quando usar esse tipo de prática
+    - Em algoritmos de ordenação (ex: bubble sort, selection sort)
+    - Em manipulação de estruturas (ex: trocar campos entre structs)
+    - Em funções que precisam reorganizar dados sem criar novas variáveis
+    - Em projetos que exigem otimização de memória e desempenho
+    - Em testes e simulações onde valores precisam ser trocados dinamicamente
+
+Enunciados como boas práticas para esse tipo de mecanismo
+    - Crie uma função que permita trocar o conteúdo de duas variáveis de qualquer tipo, utilizando ponteiros genéricos e a função memcpy.
+        void swap_generic(void *a, void *b, size_t size);
+    
+    - Implemente uma função que só realiza a troca de valores se os ponteiros fornecidos forem válidos (não nulos).
+        int safe_swap(void *a, void *b, size_t size);
+    
+    - Desenvolva uma função que troca dois elementos de um array genérico, dado o índice de cada elemento e o tamanho de cada item.
+    void swap_array_elements(void *array, size_t elem_size, size_t index1, size_t index2);
+    
+    
+    - Crie uma função que troca dois campos de uma mesma struct, usando ponteiros para os campos e o tamanho de cada campo.
+    void swap_struct_fields(void *field1, void *field2, size_t size);
+    
+    - Implemente uma função que só realiza a troca de valores se os dados forem diferentes, evitando operações desnecessárias.
+        int conditional_swap(void *a, void *b, size_t size);

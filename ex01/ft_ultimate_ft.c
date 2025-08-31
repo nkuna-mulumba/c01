@@ -6,10 +6,11 @@
 /*   By: jcongolo <jcongolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/12 19:37:18 by jcongolo          #+#    #+#             */
-/*   Updated: 2025/07/12 21:15:55 by jcongolo         ###   ########.fr       */
+/*   Updated: 2025/08/24 16:55:30 by jcongolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 /*
     Função que recebe um ponteiro de 9 níveis para int
     e atribui o valor 42 à variável apontada no fundo da cadeia
@@ -20,7 +21,6 @@ void    ft_ultimate_ft(int *********nbr)
 }
 
 /*
-    #include <stdio.h>
     int main(void)
     {
         int x = 10; //Valor inicial da variável
@@ -59,3 +59,188 @@ void    ft_ultimate_ft(int *********nbr)
         return(0);
     }
 */
+
+
+/*
+    - Modifique uma variável via ponteiro simples:
+        void ft_set_to_42(int *nbr);
+*/
+void ft_set_to_42(int *nbr)
+{
+    *nbr = 42;    
+}
+/*
+    - Modifique um ponteiro via ponteiro para ponteiro:
+        void ft_change_pointer(int **nbr);
+*/
+void    ft_change_pointer(int **nbr)
+{
+    static int  a;
+    
+    a = 42;
+    *nbr = &a;
+}
+
+/*
+    - Alocar memória dinamicamente e preencher valores:
+        void ft_allocate_and_fill(int **array, int size);
+*/
+#include <stdlib.h>
+void    ft_allocate_and_fill(int **array, int size)
+{
+    int i;
+    int fill_value;
+
+    if (size <= 0 || !array)
+    {
+        return;
+    }
+    
+    *array = malloc(size * sizeof(int));
+    if (!*array)
+    {
+        return;
+    }
+
+    i = 0;
+    fill_value = 5;
+    while (i < size)
+    {
+        (*array)[i] = fill_value;
+        i++;
+        fill_value += fill_value;
+    }
+}
+/*
+    int main(void)
+    {
+        int *my_array;
+        int size_array;
+        int i;
+        int nbr;
+        
+        my_array = NULL;
+        size_array = 3;
+
+        printf("Antes de trocar o ponteiro\n");
+        my_array = malloc(size_array * sizeof(int));
+        if (!my_array)
+        {
+            return(1);
+        }
+        
+        i = 0;
+        nbr = 1;
+        while (i < size_array)
+        {
+            my_array[i] = nbr;
+            printf("Position[%d] value -> %d\n", i, my_array[i]);
+            i++;
+            nbr += 1;
+        }
+        free(my_array);
+
+        printf("Depois de trocar o ponteiro\n");
+        ft_allocate_and_fill(&my_array, size_array);
+        
+        i = 0;
+        while (i < size_array)
+        {
+            printf("Posiçao[%d] value -> %d\n", i, my_array[i]);
+            i++;
+        }
+        
+        free(my_array);
+        return(0);
+    }
+*/
+
+
+/*
+    - Manipular strings via pointers:
+        void ft_str_uppercase(char *str);
+*/
+    /*
+        void    ft_str_uppercase(char *str)
+        {    
+            if (!str)
+            {
+                return;
+            }
+            while (*str)
+            {
+                if (*str >= 'a' && *str <= 'z')
+                {
+                    *str -= ('a' - 'A');
+                }
+                str++;
+            }
+        }
+    */
+
+int ft_is_lowercase_char(char c)
+{
+    if (!c)
+    {
+        return(0);
+    }
+    if (!(c >= 'a' && c <= 'z'))
+    {
+        return(0);
+    }
+    return(1);
+}
+
+void    ft_toupper_char(char *c)
+{
+    if (!*c)
+    {
+        return;
+    }
+    if (*c >= 'a' && *c <= 'z')
+    {
+        *c -= 32;
+    }    
+}
+
+void    ft_str_uppercase(char *str)
+{    
+    if (!str)
+    {
+        return;
+    }
+    while (*str)
+    {
+        if (ft_is_lowercase_char(*str) == 1)
+        {
+            ft_toupper_char(&*str);
+        }
+        str++;
+    }
+}
+
+/*
+    - Criar uma função que troca dois valores usando ponteiros
+        void ft_swap(int *a, int *b);
+*/
+void    ft_swap(int *a, int *b)
+{
+    int tmp_value;
+
+    tmp_value = *a;
+    *a = *b;
+    *b = tmp_value;
+}
+
+int main(void)
+{
+    int x = 5;
+    int y = 10;
+    
+    printf("Value before -> X: %d and Y: %d\n", x, y);
+    
+    ft_swap(&x, &y);
+    
+    printf("Value after -> X: %d and Y: %d\n", x, y);
+    return(0);
+}

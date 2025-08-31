@@ -1,0 +1,39 @@
+🎯 Objetivo do Enunciado
+    O exercício tem como principal objetivo ensinar o conceito de ponteiros 
+    múltiplos e como navegar por diferentes níveis de indireção. Ao trabalhar com 
+    int *********nbr, o aluno é forçado a entender:
+    O que é um ponteiro para ponteiro
+    Como desreferenciar múltiplos níveis
+    Como funciona a memória e o acesso indireto a variáveis
+
+✅ Pontos Positivos:
+    - Fortalece a compreensão de ponteiros: Ajuda a consolidar a ideia de que ponteiros são apenas endereços, e que podem apontar para outros ponteiros.
+    - Exercita a paciência e atenção: Desreferenciar 9 níveis exige foco e cuidado.
+    - Introduz o conceito de indireção profunda: Útil para entender estruturas complexas como listas encadeadas, árvores, ou manipulação de ponteiros em funções.
+    - Ajuda a visualizar a memória: Estimula o aluno a imaginar como os dados estão organizados na RAM.
+
+❌ Pontos Negativos:
+    - Pouco prático no mundo real: É extremamente raro (quase nunca) usar 9 níveis de ponteiros em aplicações reais.
+    - Pode confundir iniciantes: Sem contexto, parece um exercício arbitrário e desnecessariamente complexo.
+    - Não ensina boas práticas diretamente: Pode induzir à ideia errada de que profundidade de ponteiros é desejável.
+
+🛠️ Quando usar esse tipo de mecanismo:
+    -Na prática, múltiplos níveis de ponteiros são usados em casos como:
+    -Manipulação de ponteiros em funções: Ex: passar int ** para modificar um ponteiro dentro de uma função.
+    -Alocação dinâmica de matrizes ou estruturas complexas
+    -Implementação de estruturas como árvores, grafos, ou listas encadeadas
+    -APIs que precisam modificar variáveis externas via ponteiros
+    -Mas 9 níveis é exagerado — normalmente usamos até 2 ou 3 níveis no máximo.
+
+📘 5 Enunciados para boas práticas e entendimento:
+    Aqui vão 5 ideias de exercícios que ensinam o uso de ponteiros de forma mais prática e progressiva:
+    - Modifique uma variável via ponteiro simples:
+        void ft_set_to_42(int *nbr);
+    - Modifique um ponteiro via ponteiro para ponteiro:
+        void ft_change_pointer(int **nbr);
+    - Alocar memória dinamicamente e preencher valores:
+        void ft_allocate_and_fill(int **array, int size);
+    - Manipular strings via ponteiros:
+        void ft_str_uppercase(char *str);
+    - Criar uma função que troca dois valores usando ponteiros
+        void ft_swap(int *a, int *b);

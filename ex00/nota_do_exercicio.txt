@@ -1,0 +1,42 @@
+🎯 Breve objetivo do enunciado
+    O exercício tem como objetivo:
+    - Introduzir o conceito de ponteiros em C.
+    - Mostrar como uma função pode modificar diretamente 
+        uma variável fora do seu escopo.
+    - Reforçar a ideia de acesso indireto à memória.
+    - Estimular o entendimento de referência vs. valor.
+
+✅ Pontos positivos
+    - Didático e direto: ensina ponteiros sem distrações.
+    - Fácil de testar: basta declarar um int, passar seu 
+        endereço e verificar se virou 42.
+    - Fundamental para C: ponteiros são a espinha dorsal da linguagem.
+    - Abre portas para conceitos maiores: como arrays, structs, 
+        manipulação dinâmica de memória.
+
+⚠️ Pontos negativos
+    - Muito simples: pode parecer trivial demais para quem
+        já tem alguma base.
+    - Pouco contexto prático: não mostra ainda por que isso
+        seria útil num projeto real.
+    - Não trata erros ou validações: por exemplo, se o ponteiro for NULL.
+    
+🛠️ Quando pode ser necessário ou útil?
+    - Esse tipo de função é útil em várias situações:
+    - Alterar valores em funções sem retorno: como atualizar uma variável de status.
+    - Manipular estruturas complexas: como listas ligadas, árvores, etc.
+    - Passar dados entre funções sem cópia: economiza memória e tempo.
+    - Simular múltiplos retornos: já que C não permite retornar mais de um valor diretamente.
+
+🧪 5 enunciados para melhorar a prática e entendimento
+    - Modifique o valor de dois inteiros usando dois ponteiros.
+        void ft_swap_to_42_and_24(int *a, int *b);
+    - Crie uma função que troque os valores de dois inteiros.
+        void ft_swap(int *a, int *b);
+    - Crie uma função que incremente o valor apontado por um ponteiro.
+        void ft_increment(int *nbr);
+    - Crie uma função que zere o valor de um inteiro usando ponteiro.
+        void ft_reset(int *nbr);
+    - Crie uma função que multiplique o valor apontado por 
+        um ponteiro por um fator.
+        void ft_multiply(int *nbr, int factor);
