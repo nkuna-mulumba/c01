@@ -1,0 +1,28 @@
+✅ Pontos positivos:
+    - Evita repetição de código: encapsula duas operações matemáticas comuns em uma única função.
+    - Uso de ponteiros: permite retornar múltiplos valores, o que não é possível diretamente em C.
+    - Clareza semântica: o nome da função já indica exatamente o que ela faz.
+    - Eficiência: realiza ambas as operações com apenas uma chamada de função.
+    - Versatilidade: pode ser usada em algoritmos que exigem tanto o quociente quanto o resto (ex: conversão de base, criptografia, ordenação por buckets).
+
+❌ Pontos negativos:
+    - Não trata divisão por zero: se b == 0, a função causará erro de execução.
+    - Não retorna status: não há verificação de erro ou retorno para indicar falha.
+    - Dependência de ponteiros válidos: se div ou mod forem NULL, pode causar comportamento indefinido.
+    - Pouco flexível para tipos diferentes: funciona apenas com int; não lida com float, double, etc.
+    - Não é segura em ambientes críticos sem validação.
+
+🛠️ Quando usar esse tipo de mecanismo:
+    - Em algoritmos que precisam de quociente e resto simultaneamente, como:
+    - Conversão de números para outras bases (binário, hexadecimal).
+    - Algoritmos de hashing.
+    - Distribuição de tarefas ou dados em blocos.
+    - Cálculo de tempo (ex: converter segundos em horas/minutos).
+    - Criptografia modular.
+
+🧪 5 enunciados práticos para treinar o uso da função:
+    - Escreva uma função que converta segundos em minutos e segundos usando ft_div_mod.
+    - Implemente uma função que distribua n itens igualmente entre k grupos e retorne o número de itens por grupo e os que sobram.
+    - Crie um programa que receba um número e diga se ele é divisível por outro, usando o módulo calculado por ft_div_mod.
+    - Utilize ft_div_mod para simular um relógio digital que converte segundos em horas, minutos e segundos.
+    - Implemente uma função que, dado um número, retorne os dígitos separados usando divisão e módulo.
