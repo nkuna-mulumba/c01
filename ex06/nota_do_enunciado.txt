@@ -1,0 +1,32 @@
+🎯 Objetivo principal (de forma curta);
+    Implementar uma função que conte o número de caracteres de uma string sem usar funções externas, reforçando o entendimento de ponteiros, arrays e controle de fluxo.
+
+✅ Pontos positivos:
+    - Treina lógica básica de contagem e estrutura de repetição.
+    - Evita dependência de biblioteca (strlen da <string.h>), útil em ambientes restritos.
+    - Fortalece entendimento de strings como arrays de char terminados por '\0'.
+    - Simples e eficiente, ideal para iniciantes e validação de fundamentos.
+
+⚠️ Pontos negativos:
+    - Não trata ponteiro nulo (NULL) — pode causar falha se str == NULL.
+    - Não verifica limites de segurança (como tamanho máximo).
+    - Não é reutilizável para substrings ou buffers parciais sem adaptação.
+
+🛠️ Quando usar esse mecanismo:
+    - Ao implementar sua própria biblioteca padrão (libft).
+    - Em projetos onde funções externas são proibidas (como na 42).
+    - Em sistemas embarcados ou ambientes com restrição de recursos.
+    - Para validar entrada, calcular tamanho antes de alocar memória ou copiar strings.
+
+🧪 3 Enunciados para praticar e aprofundar:
+    1. ft_strlen_safe
+    Escreva uma função que conte os caracteres de uma string apenas se o ponteiro não for nulo, retornando 0 em caso contrário.
+    int ft_strlen_safe(char *str);
+    
+    2. ft_strlen_until
+    Escreva uma função que conte os caracteres de uma string até encontrar um caractere específico (ex: ',' ou '.').
+    int ft_strlen_until(char *str, char stop);
+    
+    3. ft_strlen_range
+    Escreva uma função que conte os caracteres entre dois índices (start e end) de uma string, sem ultrapassar o '\0'.
+    int ft_strlen_range(char *str, int start, int end);

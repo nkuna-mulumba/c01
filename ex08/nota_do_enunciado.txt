@@ -1,0 +1,30 @@
+🎯 Objetivo do enunciado:
+    Criar uma função que ordene um array de inteiros em ordem crescente, usando apenas lógica básica (sem funções externas), com controle manual de índices e trocas.
+
+✅ Pontos positivos da tua solução:
+    - Não usa funções externas: segue a restrição do exercício.
+    - Simples e legível: ideal para iniciantes entenderem lógica de ordenação.
+    - Robusta para arrays pequenos: funciona bem com 3, 5, 10 elementos.
+
+⚠️ Pontos negativos (limitações)
+    - Desempenho fraco em arrays grandes: Bubble Sort tem complexidade O(n²).
+    - Trocas desnecessárias: mesmo com array quase ordenado, percorre tudo.
+    - Não é estável nem adaptativo: não aproveita ordenações parciais com eficiência.
+    - Não permite ordenações personalizadas (ex: decrescente, por critérios) sem modificar a lógica.
+ 
+🧠 Quando aplicar esse mecanismo em projetos
+    - Em projetos educacionais ou exercícios de lógica.
+    - Para ordenar arrays pequenos onde desempenho não é crítico.
+    - Em ambientes restritos (sem acesso a qsort, sort, etc.).
+    - Para testes manuais ou validação de funções com dados simples.
+
+📘 Enunciados para treinar e entender melhor esse tipo de mecanismo:
+    1. Ordenar um array de floats em ordem decrescente
+        // Exemplo: [1.2, 3.4, 2.1] → [3.4, 2.1, 1.2]
+        Treina adaptação de tipos e lógica inversa.
+
+    2. Ordenar apenas os elementos pares de um array, mantendo ímpares nas posições
+        // Exemplo: [4, 3, 2, 1] → [2, 3, 4, 1]
+        Exige controle condicional e manipulação seletiva.
+
+    3. Detectar se um array já está ordenado antes de aplicar Bubble Sort. Se estiver ordenado, não faz nada.

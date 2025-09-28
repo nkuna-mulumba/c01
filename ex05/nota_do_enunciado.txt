@@ -1,0 +1,40 @@
+🎯 Breve objetivo do enunciado:
+    O exercício propõe escrever uma função que exiba os caracteres de uma string no ecrã, utilizando apenas a função write. O objetivo é treinar: 
+    - Percurso de strings em C (char *str)
+    - Uso de ponteiros e índices
+    - Escrita direta no terminal via write
+    - Evitar uso de funções de alto nível como printf
+
+✅ Pontos positivos:
+    - Foco em baixo nível: obriga o uso direto de write, útil para entender como funciona a saída padrão.
+    - Treina manipulação de strings: percorre caractere por caractere.
+    - Simples e didático: ideal para consolidar fundamentos de ponteiros e arrays.
+    - Sem dependências externas: não exige bibliotecas além de unistd.h.
+
+⚠️ Pontos negativos:
+    - Sem verificação de ponteiro nulo: se str == NULL, pode causar falha.
+    - Não permite formatação: diferente de printf, não há controle de layout ou tipos.
+    - Pouco flexível: só imprime strings, sem retorno ou controle de erro.
+
+🛠️ Quando usar esse mecanismo em projetos:
+    - Sistemas embarcados ou ambientes restritos: onde printf não está disponível.
+    - Funções utilitárias internas: como ft_putstr para debug ou logs simples.
+    - Implementações personalizadas de libc: como em projetos da 42 ou sistemas operacionais.
+    - Ambientes com controle direto de descritores: como sockets, pipes ou arquivos.
+
+🧪 4 Enunciados para praticar e aprofundar:
+    - 1. ft_putnbr
+    Escreva uma função que receba um inteiro e o exiba no ecrã usando apenas write.
+    void ft_putnbr(int n);
+    
+    - 2. ft_putstr_fd
+    Escreva uma função que receba uma string e um descritor de ficheiro, e escreva a string nesse descritor.
+    void ft_putstr_fd(char *str, int fd);
+    
+    - 3. ft_putendl
+    Escreva uma função que exiba uma string seguida de uma quebra de linha (\n), usando apenas write.
+    void ft_putendl(char *str);
+    
+    - 4. ft_putstr_safe
+    Escreva uma função que exiba uma string apenas se o ponteiro não for nulo, evitando falhas.
+    void ft_putstr_safe(char *str);

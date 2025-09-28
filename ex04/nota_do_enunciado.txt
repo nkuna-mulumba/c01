@@ -1,0 +1,36 @@
+🎯 Breve objetivo do enunciado:
+    O exercício propõe a criação de uma função que recebe dois ponteiros para inteiros e realiza uma divisão inteira, armazenando:
+    - O quociente no primeiro ponteiro (*a)
+    - O resto no segundo ponteiro (*b)
+    - O objetivo é treinar:
+    - Manipulação de ponteiros
+    - Operações aritméticas básicas
+    - Atualização de valores via referência
+
+✅ Pontos positivos:
+    - Clareza na prototipagem: uso direto de void ft_ultimate_div_mod(int *a, int *b);
+    - Foco em ponteiros: reforça a compreensão de como modificar variáveis fora do escopo local
+    - Sem funções externas: exige raciocínio puro com operadores nativos (/, %)
+    - Prático e direto: simula uma operação comum em algoritmos matemáticos
+
+⚠️ Pontos negativos:
+    - Não exige verificação de divisão por zero: pode induzir a erros se usado sem cuidado
+    - Pouca contextualização: não mostra onde esse tipo de função seria útil em sistemas reais
+    - Não permite retorno de erro ou status: limita a robustez da função
+
+🛠️ Quando esse mecanismo é útil em projetos:
+    - Funções matemáticas internas: como em calculadoras, conversores ou sistemas de pontuação
+    - Manipulação de dados em baixo nível: quando se quer evitar retorno por return e usar ponteiros para múltiplos resultados
+    - Sistemas embarcados ou drivers: onde economia de memória e controle direto são essenciais
+    - Rotinas de parsing ou formatação: como extrair dígitos ou separar partes de um número
+
+🧪 Enunciados práticos para aprofundar o conceito:
+    - 1. ft_swap_values
+        Escreva uma função que receba dois ponteiros para inteiros e troque os valores entre eles.
+        void ft_swap_values(int *a, int *b);
+    - 2. ft_split_sum
+        Crie uma função que receba dois inteiros e dois ponteiros. Armazene a soma dos inteiros em um ponteiro e a diferença no outro.
+        void ft_split_sum(int a, int b, int *sum, int *diff);
+    - 3. ft_extract_digits
+        Escreva uma função que receba um inteiro positivo e dois ponteiros. Armazene o último dígito em um ponteiro e o restante do número no outro.
+        void ft_extract_digits(int n, int *last_digit, int *rest);

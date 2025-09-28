@@ -1,0 +1,37 @@
+🎯 Breve objetivo do enunciado
+    O exercício propõe implementar uma função que inverta os elementos de um array de inteiros, sem usar funções externas. O primeiro elemento troca com o último, o segundo com o penúltimo, e assim por diante.
+
+    Essa operação é feita in-place, ou seja, sem criar um novo array — apenas trocando os valores dentro do original.
+
+✅ Pontos positivos da resolução:
+    - Simples e eficiente: usa apenas uma variável temporária (tmp) e um loop com índice i.
+    - Evita alocação dinâmica: ideal para ambientes com restrições de memória.
+    - Boa prática de manipulação de ponteiros e índices.
+    - Evita funções externas: cumpre o requisito de não usar funções autorizadas.
+
+⚠️ Pontos negativos ou limitações
+    - Sem validação de ponteiro nulo: não verifica se tab == NULL.
+    - Não trata arrays de tamanho zero ou negativo: embora size / 2 evite erro, seria bom validar.
+    - Não imprime ou testa o resultado: útil para depuração.
+    - Não modulariza: tudo está em uma função única, sem separação de responsabilidades.
+
+🧠 Quando aplicar esse tipo de mecanismo?
+    - Esse tipo de inversão é útil em:
+    - Algoritmos de ordenação ou reorganização de dados
+    - Manipulação de buffers (ex: inverter sequência de bytes)
+    - Funções de reversão de strings ou arrays (ex: reverse() em linguagens de alto nível)
+    - Soluções de problemas matemáticos (ex: palíndromos, simetria)
+    - Pré-processamento de dados (ex: inverter logs, histórico, etc.)
+
+🧪 3 Enunciados práticos para treinar esse mecanismo
+    1. 🔄 Inverter uma string de caracteres
+    void ft_rev_str(char *str);
+    Recebe uma string e inverte os caracteres in-place, sem usar funções externas.
+
+    2. 🧮 Inverter um array de floats
+    void ft_rev_float_tab(float *tab, int size);
+    Mesma lógica, mas com float. Ideal para treinar com tipos diferentes e precisão.
+
+    3. 🧩 Inverter pares em um array
+    void ft_rev_pairs(int *tab, int size);
+    Inverte os elementos de dois em dois: [1,2,3,4] → [2,1,4,3]. Exige controle de índices e lógica condicional.
